@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+# list format: role:[pks]
+'postgresql': [ 'postgresql' ]
+'nginx': [ 'nginx' ]
+'apache': [ 'apache' ]
+'zabbix-server':
+  - 'zabbix-server-mysql'
+  - 'zabbix-server-pgsql'
