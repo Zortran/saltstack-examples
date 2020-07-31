@@ -1,5 +1,0 @@
-ansible:
-  host: ansible
-  user: vagrant
-  sudo: True
-  priv: /root/.ssh/id_rsa

@@ -1,0 +1,7 @@
+# SaltStack managed
+# {{sls}}
+
+default_include: minion.d/*.conf
+master: do-ansible
+id: {{ grains.id }}
+ipv6: False

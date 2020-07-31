@@ -1,0 +1,29 @@
+# SaltStack managed
+# {{sls}}
+
+default_include: master.d/*.conf
+
+ipv6: False
+worker_threads: 3
+allow_minion_key_revoke: True
+
+log_level: error
+log_level_logfile: info
+
+cli_summary: False
+show_jid: False
+state_output: changes_id
+state_verbose: True
+
+file_roots:
+  base:
+    - /srv/saltstack/formulas
+    - /srv/saltstack/base
+  test:
+    - /srv/saltstack/formulas
+    - /srv/saltstack/test
+pillar_roots:
+  base:
+    - /srv/saltstack/pillar/base
+  test:
+    - /srv/saltstack/pillar/test
