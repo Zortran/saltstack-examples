@@ -1,4 +1,4 @@
-{{sls}}-Pkgs:
+{{ sls }}-Pkgs:
   pkg.installed:
     - names:
       - python-pip
@@ -6,4 +6,4 @@
 
 /etc/pip.conf:
   file.managed:
-    - source: salt://{{slspath}}/files/pip.conf
+    - source: salt://{{ slspath }}/files/pip.conf
