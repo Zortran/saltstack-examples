@@ -31,6 +31,9 @@ salt-master-dirs:
       - /srv/saltstack/pillar:
         - dir_mode: "2770"
         - file_mode: "0660"
+        - recurse:
+          - group
+          - mode
     - dir_mode: "2775"
     - file_mode: "0664"
     - group: sudo
