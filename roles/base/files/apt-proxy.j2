@@ -1,0 +1,5 @@
+# Salt managed
+# {{ sls }}
+
+Acquire::http { Proxy "http://{{ proxy }}:3142"; }
+Acquire::https { Proxy "http://{{ proxy }}:3142"; }
