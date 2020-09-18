@@ -51,10 +51,10 @@
     - pattern: '{{ line }}'
     - repl: '{{ line }}'
     - prepend_if_not_found: true
+    - on_changes_in:
+      - file: {{ grains.id }}_{{ sls }}-pgctl-apply
 {%- endfor %}
 
 {{ grains.id }}_{{ sls }}-pgctl-apply:
   cmd.wait:
-    - name: sudo -u postgres pg_ctl reload
-    - on_changes:
-      - file: /etc/postgresql/{{ salt.cmd.run('ls -1 /etc/postgresql') }}/main/pg_hba.conf
+    - name: sudo -u postgres psql -U postgres -c 'SELECT pg_reload_conf();'
