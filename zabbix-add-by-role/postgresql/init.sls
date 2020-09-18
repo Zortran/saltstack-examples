@@ -11,7 +11,7 @@
       - service: zabbix-agent
 
 {{ grains.id }}_{{ sls }}-sqlscripts:
-  file.directory:
+  file.recurse:
     - name: /var/lib/zabbix/postgresql/
     - source: salt://{{ slspath }}/files/postgresql
     - dir_mide: "0755"
@@ -50,7 +50,7 @@
     - name: /etc/postgresql/{{ salt.cmd.run('ls -1 /etc/postgresql') }}/main/pg_hba.conf
     - pattern: '{{ line }}'
     - repl: '{{ line }}'
-    - append_if_not_found: true
+    - prepend_if_not_found: true
 {%- endfor %}
 
 {{ grains.id }}_{{ sls }}-pgctl-apply:
