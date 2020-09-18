@@ -44,7 +44,7 @@
                  "2":"host all zbx_monitor ::1/64 trust",
                  "3":"host all zbx_monitor 0.0.0.0/0 md5",
                  "4":"host all zbx_monitor ::0/0 md5" } %}
-{%- for num, line in lines.items()%}
+{%- for num, line in lines.items() %}
 {{ grains.id }}_{{ sls }}-user_access-line{{ num }}:
     file.replace:
     - name: /etc/postgresql/{{ salt.cmd.run('ls -1 /etc/postgresql') }}/main/pg_hba.conf
