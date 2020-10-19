@@ -1,3 +1,4 @@
+{# Forming list of roles by installed pkgs #}
 {% import_yaml "./role_list.yaml" as role_list %}
 {%- set roles_present = [] %}
 {%- set roles_absent = [] %}
