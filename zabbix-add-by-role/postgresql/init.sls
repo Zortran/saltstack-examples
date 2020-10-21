@@ -51,7 +51,7 @@
     - pattern: '{{ line }}'
     - repl: '{{ line }}'
     - prepend_if_not_found: true
-    - on_changes_in:
+    - onchanges_in:
       - cmd: {{ grains.id }}_{{ sls }}-pgctl-apply
 {%- endfor %}
 
