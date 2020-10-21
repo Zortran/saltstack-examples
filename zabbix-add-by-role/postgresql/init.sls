@@ -52,7 +52,7 @@
     - repl: '{{ line }}'
     - prepend_if_not_found: true
     - on_changes_in:
-      - file: {{ grains.id }}_{{ sls }}-pgctl-apply
+      - cmd: {{ grains.id }}_{{ sls }}-pgctl-apply
 {%- endfor %}
 
 {{ grains.id }}_{{ sls }}-pgctl-apply:
